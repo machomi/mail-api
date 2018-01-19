@@ -1,0 +1,148 @@
+{
+	"info": {
+		"name": "docker-training",
+		"_postman_id": "63e25c32-11d7-2123-60ad-33198c7808fb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mail",
+			"description": "",
+			"item": [
+				{
+					"name": "Send email bad address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ff548be0-b558-4d5c-a23e-21dc809ef26d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"to\": \"wrong_email\",\n  \"subject\": \"Test 1\",\n  \"message\": \"Hello from docker trainig!\"\n}"
+						},
+						"url": "{{email_service_url}}/mail",
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Send email empty subject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4676fcb3-f360-4c91-b6e5-10c3024b009f",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"to\": \"machowski.michal@gmail.com\",\n  \"message\": \"Hello from docker trainig!\"\n}"
+						},
+						"url": "{{email_service_url}}/mail",
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Send email is ok",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"to\": \"machowski.michal@gmail.com\",\n  \"subject\": \"Test\",\n  \"message\": \"Hello from docker trainig!\"\n}"
+						},
+						"url": "{{email_service_url}}/mail",
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Verify email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "249ab744-a604-4ca9-8c36-ce8792b3a18c",
+								"type": "text/javascript",
+								"exec": [
+									"// https://www.getpostman.com/docs/postman/scripts/postman_sandbox_api_reference",
+									"// http://blog.getpostman.com/2017/10/25/writing-tests-in-postman/",
+									"",
+									"pm.test(\"Test email exists\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.gte(1);",
+									"    pm.response.to.have.jsonBody(\"[0].subject\", \"Test\");",
+									"    ",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": "{{maildev_url}}/email",
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

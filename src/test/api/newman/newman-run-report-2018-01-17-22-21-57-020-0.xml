@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="docker-training" time="0.136">
+  <testsuite name="mail / Send email bad address" id="fd53f695-7fc7-47e0-b18c-45fc245d83cb" tests="1" time="0.045">
+    <testcase name="Status code is 400" time="0.045"/>
+  </testsuite>
+  <testsuite name="mail / Send email empty subject" id="a6e169ac-8343-444c-921b-61a7cc379c5b" tests="1" time="0.037">
+    <testcase name="Status code is 400" time="0.037"/>
+  </testsuite>
+  <testsuite name="mail / Send email is ok" id="87760ebf-38c7-458f-b233-4cafc4097279" tests="1" time="0.039">
+    <testcase name="Status code is 200" time="0.039"/>
+  </testsuite>
+  <testsuite name="mail / Verify email" id="7a943273-4b7b-41e1-b673-5f8ac3c36490" tests="2" time="0.015">
+    <testcase name="Test email exists" time="0.015"/>
+    <testcase name="Status code is 200" time="0.015"/>
+  </testsuite>
+</testsuites>

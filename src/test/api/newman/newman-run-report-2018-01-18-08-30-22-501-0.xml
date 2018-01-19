@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="docker-training" time="0.03">
+  <testsuite name="mail / Send email bad address" id="e022b04f-8531-4836-9142-89353c1c14c2" tests="1" time="0">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1062:14)
+
+---
+]]>
+    </error>
+    <testcase name="Status code is 400" time="0">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="mail / Send email empty subject" id="d20bfb67-b8a9-4952-b18b-cfd8c1ad8cfc" tests="1" time="0">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1062:14)
+
+---
+]]>
+    </error>
+    <testcase name="Status code is 400" time="0">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="mail / Send email is ok" id="90d5ed1d-2e9f-4979-90d2-60089266fba3" tests="1" time="0">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1062:14)
+
+---
+]]>
+    </error>
+    <testcase name="Status code is 200" time="0">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="mail / Verify email" id="7c454b94-a4a8-4934-8758-0faf0d833671" tests="2" time="0.03">
+    <testcase name="Test email exists" time="0.03">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+    <testcase name="Status code is 200" time="0.03"/>
+  </testsuite>
+</testsuites>

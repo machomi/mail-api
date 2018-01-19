@@ -1,0 +1,21 @@
+version: '3'
+
+services: 
+  newman:
+    image: postman/newman_alpine33
+    external_links: 
+      - maildev
+      - mailapi
+    volumes: 
+      - .:/etc/newman
+    entrypoint: newman
+    command: 
+      - 'run'
+      - 'mail.postman_collection.json'
+      - '--environment'
+      - 'docker.postman_environment.json'
+      - '--reporters'
+      - 'junit,cli,html' 
+    # network_mode: 'host'
+    # networks: 
+    #   - mailapi_default

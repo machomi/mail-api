@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="docker-training" time="0">
+  <testsuite name="mail / Send email bad address" id="ece97e9c-5b7c-406d-8633-fc4c256759ae" tests="1" time="0">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1062:14)
+
+---
+]]>
+    </error>
+    <testcase name="Status code is 400" time="0">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="mail / Send email empty subject" id="6ca771c2-9386-4929-a121-8f491d51dc27" tests="1" time="0">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1062:14)
+
+---
+]]>
+    </error>
+    <testcase name="Status code is 400" time="0">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="mail / Send email is ok" id="d0ad612a-94dd-427e-8364-fe7947198665" tests="1" time="0">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1062:14)
+
+---
+]]>
+    </error>
+    <testcase name="Status code is 200" time="0">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="mail / Verify email" id="6d95aa68-bd4c-432d-af56-11905d285a70" tests="2" time="0">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:1080
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1062:14)
+
+---
+]]>
+    </error>
+    <testcase name="Test email exists" time="0">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+    <testcase name="Status code is 200" time="0">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>
