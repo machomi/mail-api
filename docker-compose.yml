@@ -1,0 +1,18 @@
+version: '2'
+
+services: 
+  mailapi:
+    container_name: mailapi
+    links:
+      - maildev
+    build: .
+    image: mailapi
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_MAIL_HOST=maildev
+
+  maildev:
+    extends:
+      service: maildev
+      file: maildev.yml
